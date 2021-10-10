@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login page</title>
+<!--    <link th:href="@{/public/style.css}" rel="stylesheet" />-->
+</head>
+<body>
+<div id="container">
+    <h2>Payment Details page</h2>
+    <form th:action="@{/paymentSuccess.html}" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autofocus="autofocus" />
+        <label for="creditCardNo">Credit Card No</label>
+        <input type="password" id="creditCardNo" name="creditCardNo" />
+        <label for="cvvNo">CVV</label>
+        <input type="password" id="cvvNo" name="cvvNo" />
+        <input id="submit" type="submit" value="Make Payment" />
+    </form>
+    <p th:if="${paymentError}" class="error">Error in Payment</p>
+</div>
+</body>
+</html>
